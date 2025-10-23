@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Ali Gul">
+    <title>Magic Eight Ball</title>
+</head>
+<body>
+    <script>
+        // Array of 8 responses
+        var responses = [
+            "It is certain.",
+            "Without a doubt.", 
+            "Yes - definitely.",
+            "You may rely on it.",
+            "Ask again later.",
+            "Better not tell you now.",
+            "Don't count on it.",
+            "My sources say no."
+        ];
+        
+        var playing = true;
+        
+        while (playing) {
+            var question = prompt("Ask the Magic Eight Ball a yes/no question (or click Cancel to stop):");
+            
+            if (question === null) {
+                playing = false;
+                alert("Thanks for playing!");
+            } else if (question.trim() === "") {
+                alert("Please ask a question!");
+            } else {
+                //generate random number and using that number choose one of the responses
+                var randomIndex = Math.floor(Math.random() * responses.length);
+                alert("Magic Eight Ball says: " + responses[randomIndex]);
+            }
+        }
+    </script>
+</body>
+</html>
